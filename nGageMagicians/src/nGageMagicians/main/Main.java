@@ -1,4 +1,4 @@
-package nGageMagicians;
+package nGageMagicians.main;
 
 public class Main {
 
