@@ -1,5 +1,8 @@
 package nGageMagicians.persistence;
 
+import nGageMagicians.common.Severity;
+import nGageMagicians.common.Target;
+
 public class Spell {
 
 	private String name;

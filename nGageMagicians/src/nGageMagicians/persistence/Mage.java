@@ -4,11 +4,11 @@ public class Mage {
 
 	private String name;
 	private int level;
-	
+
 	public Mage() {
 		this.level = 1;
 	}
-	
+
 	public Mage(String name, int level) {
 		this.name = name;
 		this.level = level;
