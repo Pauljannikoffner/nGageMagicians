@@ -7,6 +7,7 @@ public class Mage {
 
 	public Mage() {
 		this.level = 1;
+		
 	}
 
 	public Mage(String name, int level) {
