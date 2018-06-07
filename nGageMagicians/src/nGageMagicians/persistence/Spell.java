@@ -1,5 +1,7 @@
 package nGageMagicians.persistence;
 
+import java.sql.Timestamp;
+
 import nGageMagicians.common.Severity;
 import nGageMagicians.common.Target;
 
@@ -10,14 +12,16 @@ public class Spell {
 	private int duration;
 	private Target target;
 	private Severity severity;
+	private Timestamp firstCreated;
 
-	public Spell(String name, String description, int duration, Target target, Severity severity) {
-		super();
+	public Spell(String name, String description, int duration, Target target, Severity severity,
+			Timestamp firstCreated) {
 		this.name = name;
 		this.description = description;
 		this.duration = duration;
 		this.target = target;
 		this.severity = severity;
+		this.firstCreated = firstCreated;
 	}
 
 	public String getName() {
@@ -58,6 +62,14 @@ public class Spell {
 
 	public void setSeverity(Severity severity) {
 		this.severity = severity;
+	}
+
+	public Timestamp getFirstCreated() {
+		return firstCreated;
+	}
+
+	public void setFirstCreated(Timestamp firstCreated) {
+		this.firstCreated = firstCreated;
 	}
 
 	@Override
