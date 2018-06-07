@@ -13,15 +13,20 @@ public class Spell {
 	private Target target;
 	private Severity severity;
 	private Timestamp firstCreated;
+	private String imagePath;
+	private String soundPath;
 
 	public Spell(String name, String description, int duration, Target target, Severity severity,
-			Timestamp firstCreated) {
+			Timestamp firstCreated, String imagePath, String soundPath) {
+		super();
 		this.name = name;
 		this.description = description;
 		this.duration = duration;
 		this.target = target;
 		this.severity = severity;
 		this.firstCreated = firstCreated;
+		this.imagePath = imagePath;
+		this.soundPath = soundPath;
 	}
 
 	public String getName() {
@@ -72,6 +77,22 @@ public class Spell {
 		this.firstCreated = firstCreated;
 	}
 
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
+	}
+
+	public String getSoundPath() {
+		return soundPath;
+	}
+
+	public void setSoundPath(String soundPath) {
+		this.soundPath = soundPath;
+	}
+
 	@Override
 	public boolean equals(Object obj) {
 		if (this == obj)
@@ -88,12 +109,27 @@ public class Spell {
 			return false;
 		if (duration != other.duration)
 			return false;
+		if (firstCreated == null) {
+			if (other.firstCreated != null)
+				return false;
+		} else if (!firstCreated.equals(other.firstCreated))
+			return false;
+		if (imagePath == null) {
+			if (other.imagePath != null)
+				return false;
+		} else if (!imagePath.equals(other.imagePath))
+			return false;
 		if (name == null) {
 			if (other.name != null)
 				return false;
 		} else if (!name.equals(other.name))
 			return false;
 		if (severity != other.severity)
+			return false;
+		if (soundPath == null) {
+			if (other.soundPath != null)
+				return false;
+		} else if (!soundPath.equals(other.soundPath))
 			return false;
 		if (target != other.target)
 			return false;
@@ -103,6 +139,8 @@ public class Spell {
 	@Override
 	public String toString() {
 		return "Spell [name=" + name + ", description=" + description + ", duration=" + duration + ", target=" + target
-				+ ", severity=" + severity + "]";
+				+ ", severity=" + severity + ", firstCreated=" + firstCreated + ", imagePath=" + imagePath
+				+ ", soundPath=" + soundPath + "]";
 	}
+
 }

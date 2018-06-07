@@ -4,15 +4,17 @@ public class Mage {
 
 	private String name;
 	private int level;
+	private String imagePath;
 
 	public Mage() {
 		this.level = 1;
-		
+
 	}
 
-	public Mage(String name, int level) {
+	public Mage(String name, int level, String imagePath) {
 		this.name = name;
 		this.level = level;
+		this.imagePath = imagePath;
 	}
 
 	public String getName() {
@@ -31,9 +33,12 @@ public class Mage {
 		this.level = level;
 	}
 
-	@Override
-	public String toString() {
-		return "Mage [name=" + name + ", level=" + level + "]";
+	public String getImagePath() {
+		return imagePath;
+	}
+
+	public void setImagePath(String imagePath) {
+		this.imagePath = imagePath;
 	}
 
 	@Override
@@ -45,6 +50,11 @@ public class Mage {
 		if (getClass() != obj.getClass())
 			return false;
 		Mage other = (Mage) obj;
+		if (imagePath == null) {
+			if (other.imagePath != null)
+				return false;
+		} else if (!imagePath.equals(other.imagePath))
+			return false;
 		if (level != other.level)
 			return false;
 		if (name == null) {
@@ -54,4 +64,10 @@ public class Mage {
 			return false;
 		return true;
 	}
+
+	@Override
+	public String toString() {
+		return "Mage [name=" + name + ", level=" + level + ", imagePath=" + imagePath + "]";
+	}
+
 }
